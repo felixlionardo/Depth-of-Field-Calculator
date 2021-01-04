@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/noLens"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:src="@mipmap/empty_state_image"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_add_circle_black_24dp" />
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar_layout" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/noLens"
+        app:layout_anchorGravity="center">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="16dp"
+            android:text="Select a lens from the list below:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="128dp"
+            android:text="Optional Features Implemented:" />
+
+        <ListView
+            android:id="@+id/lensList"
+            android:layout_width="359dp"
+            android:layout_height="417dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="124dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="105dp"
+            android:text="1. App Bar Buttons via Toolbar" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="83dp"
+            android:text="2. Error Checking Input" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="60dp"
+            android:text="3. Empty State" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/empty_list_item_subtext"
+        android:layout_width="300dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginBottom="44dp"
+        android:text="There are no lens currently stored :( \nLenses will automatically appear once you add them in using the button below"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#2196F3"
+        android:visibility="visible"
+        app:layout_anchor="@+id/noLens"
+        app:layout_anchorGravity="top|center" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
